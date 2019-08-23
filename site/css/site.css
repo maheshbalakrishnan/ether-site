@@ -1,0 +1,129 @@
+body {
+    margin: 2%;    
+    overflow: visible;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.side-bar {
+    background: #e22c23;
+    background-image: -webkit-gradient(linear,left top,right top,from(#e22c23),to(#333399));
+    background-image: linear-gradient(to left,#e22c23,#333399);
+}
+
+.card {
+    min-width: 80%;
+    min-height: 40%;
+    padding: 3%;
+    color: Black;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-text > h4 {
+    color: #000000;    
+    text-align: center;
+}
+
+.card-text > h2 {
+    color: #0095A8;    
+}
+
+.card-text > h3 {    
+    color: #29384e;
+}
+
+.card-photo {
+    border-radius: 50%;
+    border-width: 10px;
+    border-color: #13ADC1;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { 
+    .side-bar {        
+        width: 100%;
+        left: -70%;
+        height: 100%;
+        display: block;
+        position: fixed;
+        top: 0;
+        z-index: -500;
+        transform: skew(-15deg);
+        transition: all 0.4s ease;     
+    }
+
+}
+ 
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+    .side-bar {        
+        width: 100%;
+        left: -70%;
+        height: 100%;
+        display: block;
+        position: fixed;
+        top: 0;
+        z-index: -500;
+        transform: skew(-15deg);
+        transition: all 0.4s ease;     
+    }
+}
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    .side-bar {        
+        width: 100%;        
+        max-height: 150px;
+        min-height: 150px;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .card-photo {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;        
+    }
+    .card-text > h2 {
+        font-size: 48px;                
+    }
+    .card-text > h3 {
+        font-size: 32px;
+        color: #29384e; 
+    }
+    .card-text > h4 {
+        font-size: 18px;
+        color: #000000;
+    }
+}
+ 
+@media all and (max-width: 480px) { 
+    .side-bar {        
+        width: 100%;        
+        max-height: 100px;
+        min-height: 100px;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .card-photo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;        
+    }
+    .card-text > h2 {
+        font-size: 48px;                
+    }
+    .card-text > h3 {
+        font-size: 32px;
+        color: #29384e; 
+    }
+    .card-text > h4 {
+        font-size: 18px;
+        color: #000000;
+    }
+}
