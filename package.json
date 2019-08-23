@@ -1,0 +1,25 @@
+{
+  "name": "ether-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "serve",
+    "sass": "node-sass --watch ./sass --output ./css",
+    "deploy": "./deploy.sh /tmp/phase-site-temp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maheshbalakrishnan/ether-site.git"
+  },
+  "author": "Mahesh Balakrishnan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maheshbalakrishnan/ether-site/issues"
+  },
+  "homepage": "https://github.com/maheshbalakrishnan/ether-site#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0",
+    "serve": "^11.1.0"
+  }
+}
