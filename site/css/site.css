@@ -1,17 +1,59 @@
 body {
     overflow: visible;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     margin: 0;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: #262626;
-    color: #b8b8b8;
+    -moz-osx-font-smoothing: grayscale;    
+}
+p::selection {
+    background: #0095A8;
+}
+p::-moz-selection {
+    background: #0095A8;
+}
+@keyframes appear-from-top {
+    0% {
+      transform: translateY(-5%);
+      opacity: 0;      
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
 }
 
-.side-bar {
-    background: #e22c23;
-    background-image: -webkit-gradient(linear,left top,right top,from(#e22c23),to(#333399));
-    background-image: linear-gradient(to left,#e22c23,#333399);
+@keyframes gradient-from-top {
+    0% {
+        background-image: -webkit-gradient(linear,left top,right top,from(#333399),to(#333399));
+        background-image: linear-gradient(to top,#333399,#333399 0%);
+    }
+    25% {
+        background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
+        background-image: linear-gradient(to top,#0095A8,#333399 25%);
+    }
+    50% {
+        background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
+        background-image: linear-gradient(to top,#0095A8,#333399 50%);
+    }
+    75% {
+        background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
+        background-image: linear-gradient(to top,#0095A8,#333399 75%);
+    }
+    100% {
+        background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
+        background-image: linear-gradient(to top,#0095A8,#333399 90%);
+    }
+}
+
+.animated-content {
+    animation: 0.1s ease-in 0.2s 1 appear-from-top;
+    animation-fill-mode: both;
+}
+
+.top-bar {
+    background: #333399;
+    background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
+    background-image: linear-gradient(to left,#0095A8,#333399 90%);
     display: block;
     position: fixed;
     top: 0;
@@ -35,20 +77,41 @@ body {
     align-items: center;
     text-align: center;
 }
-
-.card-text > hr {
-    width: 55%;
-    color: #333399;   
+.card-text {
+    width: 40%;
+    text-align: justify;
 }
 .card-text > h2 {
-    color: #0095A8;    
+    font-family: 'Pattaya', sans-serif;
+    color: #29384e;
+    text-align: center; 
+
 }
-.card-text > h3 {    
+.card-text > p { 
     color: #29384e;
 }
-.card-text > h4 {
-    color: #000000;    
-    text-align: center;
+.card-text > p > strong {    
+    color: #0095A8;    
+}
+.action {
+    margin-top: 12px;
+}
+.button-linkedin { 
+    color: white;
+    background-color: #1a76c6;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 800;
+    border: 0; 
+}
+.button-linkedin:hover {
+    border: 1px solid #5f94c3;
+}
+svg { 
+    width: 16px;
+    height: 16px;
+    fill: white;    
 }
 
 .card-photo {
@@ -59,7 +122,7 @@ body {
     margin-left: 10%;
     width: 150px;
     height: 150px;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 
 @media all and (min-width: 1024px) { 
@@ -69,57 +132,71 @@ body {
         text-align: center;
         padding-top: 50px !important;
     }
+    .card-text {
+        width: 40%;
+    }
     .card-photo {
         width: 200px;
         height: 200px;
         margin: 0 auto;
     }
     .card-text > h2 {
-        font-size: 64px;                
+        font-size: 48px;                
     }
-    .card-text > h3 {
-        font-size: 42px;
-        color: #29384e; 
-    }
-    .card-text > h4 {
-        font-size: 24px;
-        color: #000000;
+    .card-text > p {
+        font-size: 24px;     
     }
 
 }
  
 @media all and (min-width: 768px) and (max-width: 1024px) { 
+    .card-text {
+        width: 40%;
+    }
     .card-text > h2 {
         font-size: 48px;                
     }
-    .card-text > h3 {
+    .card-text > p {
         font-size: 32px; 
-    }
-    .card-text > h4 {
-        font-size: 18px;
     }
 }
  
 @media all and (min-width: 480px) and (max-width: 768px) { 
+    .top-bar {
+        background: #333399;
+        background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
+        background-image: linear-gradient(to top,#0095A8,#333399);
+        position: absolute;
+        animation: 0.2s ease-out 0,2s 1 gradient-from-top;
+        animation-fill-mode: both;
+    }
+    .card-text {
+        width: 90%;
+    }
     .card-text > h2 {
-        font-size: 48px;                
+        font-size: 32px;                
     }
-    .card-text > h3 {
-        font-size: 32px;
-    }
-    .card-text > h4 {
+    .card-text > p {
         font-size: 18px;
     }
 }
  
 @media all and (max-width: 480px) { 
+    .top-bar {
+        background: #333399;
+        background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
+        background-image: linear-gradient(to top,#0095A8,#333399 90%);
+        position: absolute;
+        animation: 0.2s ease-out 0.2s 1 gradient-from-top;
+        animation-fill-mode: both;
+    }
+    .card-text {
+        width: 90%;
+    }
     .card-text > h2 {
-        font-size: 48px;                
+        font-size: 32px;                
     }
-    .card-text > h3 {
-        font-size: 32px;
-    }
-    .card-text > h4 {
+    .card-text > p {
         font-size: 18px;
     }
 }
