@@ -5,6 +5,19 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;    
 }
+
+footer {
+    margin-top: 8%;
+    background: #333399;    
+    background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
+    background-image: linear-gradient(to left,#0095A8,#333399 90%);
+    box-shadow: 0px -8px 14px 1px rgba(0, 0, 0, .2);
+    color: #ffffff55;
+    font-size: 12px;
+}
+.text-center {
+    text-align: center;
+}
 p::selection {
     background: #0095A8;
 }
@@ -35,7 +48,7 @@ p::-moz-selection {
         background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
         background-image: linear-gradient(to top,#0095A8,#333399 50%);
     }
-    75% {
+	    75% {
         background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
         background-image: linear-gradient(to top,#0095A8,#333399 75%);
     }
@@ -49,13 +62,13 @@ p::-moz-selection {
     animation: 0.1s ease-in 0.2s 1 appear-from-top;
     animation-fill-mode: both;
 }
-
+	
 .top-bar {
     background: #333399;
     background-image: -webkit-gradient(linear,left top,right top,from(#0095A8),to(#333399));
     background-image: linear-gradient(to left,#0095A8,#333399 90%);
     display: block;
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: -500; 
     transition: all 0.4s ease;
@@ -63,6 +76,7 @@ p::-moz-selection {
     height: 15%;
     max-height: 100px;
     max-height: 100px;
+    box-shadow: 0px 8px 14px 1px rgba(0, 0, 0, .2);
 }
 
 .card {
@@ -81,11 +95,11 @@ p::-moz-selection {
     width: 40%;
     text-align: justify;
 }
-.card-text > h2 {
+.greeting {
     font-family: 'Pattaya', sans-serif;
-    color: #29384e;
-    text-align: center; 
-
+    color: #0095A8;
+    text-align: center;
+    text-shadow: 2px 2px 2px #0095A855; 
 }
 .card-text > p { 
     color: #29384e;
@@ -93,8 +107,12 @@ p::-moz-selection {
 .card-text > p > strong {    
     color: #0095A8;    
 }
+.card-text > p > em {
+    color: rgba(33, 33, 33, 0.5);
+    font-style: normal;
+}
 .action {
-    margin-top: 12px;
+    margin-top: 28px;
 }
 .button-linkedin { 
     color: white;
@@ -106,11 +124,11 @@ p::-moz-selection {
     border: 0; 
 }
 .button-linkedin:hover {
-    border: 1px solid #5f94c3;
+    background-color: #105694;
 }
 svg { 
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     fill: white;    
 }
 
@@ -122,7 +140,8 @@ svg {
     margin-left: 10%;
     width: 150px;
     height: 150px;
-    margin: 0 auto;    
+    margin: 0 auto;
+    box-shadow: 0px 8px 14px 1px rgba(0, 0, 0, .2);
 }
 
 @media all and (min-width: 1024px) { 
@@ -140,24 +159,35 @@ svg {
         height: 200px;
         margin: 0 auto;
     }
-    .card-text > h2 {
+    .greeting {
         font-size: 48px;                
     }
     .card-text > p {
         font-size: 24px;     
     }
-
+    .button {
+        font-size: 20px;
+    }
+    footer {
+	font-size: 18px;
+    }
 }
  
 @media all and (min-width: 768px) and (max-width: 1024px) { 
     .card-text {
         width: 40%;
     }
-    .card-text > h2 {
+    .greeting {
         font-size: 48px;                
     }
     .card-text > p {
-        font-size: 32px; 
+        font-size: 24px; 
+    }
+    .button {
+        font-size: 20px;
+    }
+    footer {
+	font-size: 18px;
     }
 }
  
@@ -173,11 +203,14 @@ svg {
     .card-text {
         width: 90%;
     }
-    .card-text > h2 {
+    .greeting {
         font-size: 32px;                
     }
     .card-text > p {
         font-size: 18px;
+    }
+    .button {
+        font-size: 16px;
     }
 }
  
@@ -193,10 +226,13 @@ svg {
     .card-text {
         width: 90%;
     }
-    .card-text > h2 {
+    .greeting {
         font-size: 32px;                
     }
     .card-text > p {
         font-size: 18px;
+    }
+    .button {
+        font-size: 16px;
     }
 }
