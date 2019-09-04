@@ -86,6 +86,7 @@ p::-moz-selection {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-top: 10vh !important;
 }
 .card-text {
     width: 40%;
@@ -144,8 +145,7 @@ svg {
     .card {
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        padding-top: 50px !important;
+        text-align: center;        
     }
     .card-text {
         width: 40%;
@@ -167,9 +167,6 @@ svg {
 }
  
 @media all and (min-width: 768px) and (max-width: 1024px) { 
-    .card {
-        padding-top: 50px !important;
-    }
     .card-text {
         width: 40%;
     }
@@ -193,10 +190,6 @@ svg {
         animation: 0.2s ease-out 0,2s 1 gradient-from-top;
         animation-fill-mode: both;
     }
-    .card {
-        padding: 20% 3% 3% 3% !important;
-        padding-top: 50px !important;
-    }
     .card-text {
         width: 90%;
     }
@@ -219,10 +212,6 @@ svg {
         position: absolute;
         animation: 0.2s ease-out 0.2s 1 gradient-from-top;
         animation-fill-mode: both;
-    }
-    .card {
-        padding: 20% 3% 3% 3% !important;
-        padding-top: 50px !important;
     }
     .card-text {
         width: 90%;
